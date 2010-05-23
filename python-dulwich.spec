@@ -1,6 +1,6 @@
 %define module	dulwich
 %define name	python-%{module}
-%define version	0.5.0
+%define version	0.6.0
 %define release %mkrel 1
 
 Summary:	Python implementation of the Git file formats and protocols
@@ -12,7 +12,7 @@ License:	GPLv2
 Group:		Development/Python
 Url:		https://launchpad.net/dulwich/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	python-docutils, python-nose
+BuildRequires:	python-docutils
 %py_requires -d
 
 %description
@@ -28,8 +28,8 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record
 %__make -C docs/tutorial/
 %__mv docs/tutorial/index.html tutorial.html
 
-%check
-nosetests dulwich/tests/test*.py
+#%check
+#nosetests dulwich/tests/test*.py
 
 %clean
 %__rm -rf %{buildroot}
