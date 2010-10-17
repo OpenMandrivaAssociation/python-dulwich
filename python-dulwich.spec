@@ -13,7 +13,7 @@ Group:		Development/Python
 Url:		https://launchpad.net/dulwich/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	python-docutils
-BuildRequires:	python-nose
+BuildRequires:	python-nose, git-core
 %py_requires -d
 
 %description
