@@ -1,7 +1,7 @@
 %define module	dulwich
 %define name	python-%{module}
 %define version	0.6.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Python implementation of the Git file formats and protocols
 Name:		%{name}
