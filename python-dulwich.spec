@@ -1,6 +1,6 @@
 %define module	dulwich
 %define name	python-%{module}
-%define version	0.8.3
+%define version	0.8.4
 %define release %mkrel 1
 
 Summary:	Python implementation of the Git file formats and protocols
@@ -24,7 +24,7 @@ Dulwich is a pure-Python implementation of the Git file formats and protocols.
 
 %install
 %__rm -rf %{buildroot}
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 
 pushd docs
 %__make html
@@ -37,6 +37,8 @@ popd
 %clean
 %__rm -rf %{buildroot}
 
-%files -f FILE_LIST
+%files
 %defattr(-,root,root)
 %doc AUTHORS COPYING HACKING NEWS README docs/build/html
+%_bindir/dul*
+%py_platsitedir/%{module}*
