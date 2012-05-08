@@ -1,17 +1,16 @@
 %define module	dulwich
 %define name	python-%{module}
-%define version	0.8.4
-%define release %mkrel 1
+%define version	0.8.5
+%define release 1
 
 Summary:	Python implementation of the Git file formats and protocols
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{module}-%{version}.tar.gz
+Source0:	http://samba.org/~jelmer/dulwich/%{module}-%{version}.tar.gz
 License:	GPLv2
 Group:		Development/Python
 Url:		https://launchpad.net/dulwich/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	python-sphinx
 BuildRequires:	python-nose, git-core
 %py_requires -d
@@ -34,11 +33,7 @@ popd
 #%check
 #make check
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING HACKING NEWS README docs/build/html
 %_bindir/dul*
 %py_platsitedir/%{module}*
