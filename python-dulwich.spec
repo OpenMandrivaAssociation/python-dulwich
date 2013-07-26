@@ -5,9 +5,9 @@
 
 Summary:	Python implementation of the Git file formats and protocols
 Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Source0:	http://samba.org/~jelmer/dulwich/%{module}-%{version}.tar.gz
+Version:	0.9.0
+Release:	1
+Source0:	http://www.samba.org/~jelmer/dulwich/dulwich-%{version}.tar.gz
 License:	GPLv2
 Group:		Development/Python
 Url:		https://launchpad.net/dulwich/
@@ -88,4 +88,5 @@ popd
 * Wed Apr 14 2010 Lev Givon <lev@mandriva.org> 0.5.0-1mdv2010.1
 + Revision: 534932
 - import python-dulwich
+
 
