@@ -1,19 +1,16 @@
 %define module	dulwich
-%define name	python-%{module}
-%define version	0.8.5
-%define release 1
 
 Summary:	Python implementation of the Git file formats and protocols
-Name:		%{name}
+Name:		python-%{module}
 Version:	0.9.0
-Release:	1
+Release:	2
 Source0:	http://www.samba.org/~jelmer/dulwich/dulwich-%{version}.tar.gz
 License:	GPLv2
 Group:		Development/Python
 Url:		https://launchpad.net/dulwich/
 BuildRequires:	python-sphinx
 BuildRequires:	python-nose, git-core
-%py_requires -d
+BuildRequires:  python-devel
 
 %description
 Dulwich is a pure-Python implementation of the Git file formats and protocols.
@@ -22,7 +19,6 @@ Dulwich is a pure-Python implementation of the Git file formats and protocols.
 %setup -q -n %{module}-%{version}
 
 %install
-%__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 
 pushd docs
