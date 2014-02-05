@@ -30,7 +30,7 @@ popd
 #make check
 
 %files
-%doc AUTHORS COPYING HACKING NEWS README docs/build/html
+%doc  COPYING  NEWS README docs/build/html
 %{_bindir}/dul*
 %py_platsitedir/%{module}*
 
