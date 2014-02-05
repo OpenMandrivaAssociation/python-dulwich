@@ -2,9 +2,9 @@
 
 Summary:	Python implementation of the Git file formats and protocols
 Name:		python-%{module}
-Version:	0.9.0
-Release:	2
-Source0:	http://www.samba.org/~jelmer/dulwich/dulwich-%{version}.tar.gz
+Version:	0.9.4
+Release:	1
+Source0:	https://pypi.python.org/packages/source/d/dulwich/dulwich-%{version}.tar.gz
 License:	GPLv2
 Group:		Development/Python
 Url:		https://launchpad.net/dulwich/
@@ -31,7 +31,7 @@ popd
 
 %files
 %doc AUTHORS COPYING HACKING NEWS README docs/build/html
-%_bindir/dul*
+%{_bindir}/dul*
 %py_platsitedir/%{module}*
 
 
@@ -84,5 +84,6 @@ popd
 * Wed Apr 14 2010 Lev Givon <lev@mandriva.org> 0.5.0-1mdv2010.1
 + Revision: 534932
 - import python-dulwich
+
 
 
