@@ -1,5 +1,6 @@
 removed_sources:
   dulwich-0.8.5.tar.gz: b4e55125fd21908df02fa78efc3868a99636a2cb
   dulwich-0.9.0.tar.gz: 97937e2d2a04b5fd0cd905145b74ed062f6a662c
-sources:
   dulwich-0.9.4.tar.gz: dffc10c3aef1076b0a5d0af8c1ede7fc71cec05f
+sources:
+  dulwich-0.9.5.tar.gz: 9850766c60e38289c6d14d5b348d3ea9e2fef6be
