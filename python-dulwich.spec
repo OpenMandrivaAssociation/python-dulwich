@@ -31,7 +31,7 @@ popd
 #make check
 
 %files
-%doc  COPYING  NEWS README docs/build/html
+%doc  COPYING  NEWS  docs/build/html
 %{_bindir}/dul*
 %{py_platsitedir}/%{module}*
 
