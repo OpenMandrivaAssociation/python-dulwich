@@ -1,39 +1,71 @@
-%define module	dulwich
+%define srcname dulwich
 
-Summary:	Python implementation of the Git file formats and protocols
-
-Name:		python-%{module}
-Version:	0.9.6
-Release:	2
-Source0:	https://pypi.python.org/packages/source/d/dulwich/dulwich-%{version}.tar.gz
-License:	GPLv2
+Name:           python-%{srcname}
+Version:        0.19.2
+Release:        1
+Summary:        Pure-Python Git implementation
 Group:		Development/Python
-Url:		https://launchpad.net/dulwich/
-BuildRequires:	python-sphinx
-BuildRequires:	python-nose, git-core
-BuildRequires:  python-devel
+License:        BSD
+URL:            https://github.com/dulwich/dulwich
+Source0:        https://github.com/dulwich/dulwich/archive/dulwich-%{version}.tar.gz
+
+BuildRequires:  pkgconfig(python2)
+BuildRequires:  pythonegg(setuptools)
+BuildRequires:  python2-pkg-resources
+BuildRequires:  pkgconfig(python3)
+BuildRequires:  python3egg(setuptools)
+BuildRequires:  python-pkg-resources
 
 %description
-Dulwich is a pure-Python implementation of the Git file formats and protocols.
+This is the Dulwich project.
+
+It aims to provide an interface to git repos (both local and remote) that
+doesn't call out to git directly but instead uses pure Python.
+
+%package -n python2-%{srcname}
+Summary:        Pure-Python Git implementation
+Group:		Development/Python
+
+%description -n python2-%{srcname}
+This is the Dulwich project.
+
+It aims to provide an interface to git repos (both local and remote) that
+doesn't call out to git directly but instead uses pure Python.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{srcname}-%{srcname}-%{version}
+cp -a . %{py2dir}
 
-%install
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 
-pushd docs
-%__make html
+%build
+%__python setup.py build
+
+pushd %{py2dir}
+%{__python2} setup.py build
 popd
 
-# Tests require unittest2 to run:
-#%check
-#make check
+%install
+pushd %{py2dir}
+%{__python2} setup.py install --skip-build --root %{buildroot}
+for i in %{buildroot}%{_bindir}/*; do
+	mv $i ${i}2
+done
+popd
+
+%__python setup.py install --skip-build --root %{buildroot}
 
 %files
-%doc  COPYING  NEWS  docs/build/html
-%{_bindir}/dul*
-%{py_platsitedir}/%{module}*
+%{_bindir}/dul-receive-pack
+%{_bindir}/dul-upload-pack
+%{_bindir}/dulwich
+%{py_platsitedir}/%{srcname}
+%{py_platsitedir}/%{srcname}-%{version}-py%{py_ver}.egg-info
+%doc %{py_platsitedir}/docs/tutorial
 
-
-
+%files -n python2-%{srcname}
+%{_bindir}/dul-receive-pack2
+%{_bindir}/dul-upload-pack2
+%{_bindir}/dulwich2
+%{py2_platsitedir}/%{srcname}
+%{py2_platsitedir}/%{srcname}-%{version}-py%{py2_ver}.egg-info
+%doc %{py2_platsitedir}/docs/tutorial
