@@ -1,13 +1,13 @@
 %define srcname dulwich
 
 Name:           python-%{srcname}
-Version:        0.19.2
-Release:        2
+Version:        0.19.9
+Release:        1
 Summary:        Pure-Python Git implementation
 Group:		Development/Python
 License:        BSD
 URL:            https://github.com/dulwich/dulwich
-Source0:        https://github.com/dulwich/dulwich/archive/dulwich-%{version}.tar.gz
+Source0:        https://pypi.io/packages/source/d/dulwich/dulwich-%{version}.tar.gz
 
 BuildRequires:  pkgconfig(python2)
 BuildRequires:  pythonegg(setuptools)
@@ -38,21 +38,21 @@ cp -a . %{py2dir}
 
 
 %build
-%__python setup.py build
+%__%py_build
 
 pushd %{py2dir}
-%{__python2} setup.py build
+python setup.py build
 popd
 
 %install
 pushd %{py2dir}
-%{__python2} setup.py install --skip-build --root %{buildroot}
+python setup.py install --skip-build --root %{buildroot}
 for i in %{buildroot}%{_bindir}/*; do
 	mv $i ${i}2
 done
 popd
 
-%__python setup.py install --skip-build --root %{buildroot}
+python setup.py install --skip-build --root %{buildroot}
 
 %files
 %{_bindir}/dul-receive-pack
