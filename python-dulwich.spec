@@ -1,7 +1,7 @@
 %define srcname dulwich
 
 Name:           python-%{srcname}
-Version:	0.19.14
+Version:	0.19.15
 Release:	1
 Summary:        Pure-Python Git implementation
 Group:		Development/Python
