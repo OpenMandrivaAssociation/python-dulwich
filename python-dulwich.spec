@@ -1,4 +1,5 @@
 %define srcname dulwich
+%define debug_package %nil
 
 Name:           python-%{srcname}
 Version:	0.20.2
