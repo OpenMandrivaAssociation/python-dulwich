@@ -3,7 +3,7 @@
 
 Name:           python-%{srcname}
 Version:	0.21.3
-Release:	1
+Release:	2
 Summary:        Pure-Python Git implementation
 Group:		Development/Python
 License:        BSD
