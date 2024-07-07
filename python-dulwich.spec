@@ -10,7 +10,7 @@ License:        BSD
 URL:            https://github.com/dulwich/dulwich
 Source0:        https://github.com/dulwich/dulwich/archive/dulwich-%{version}.tar.gz
 
-BuildRequires:  python%{pyver}dist(setuptools-scm)
+BuildRequires:  python%{pyver}dist(setuptools-rust)
 BuildSystem:	python
 
 %description
