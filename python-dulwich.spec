@@ -2,7 +2,7 @@
 %define debug_package %nil
 
 Name:           python-%{srcname}
-Version:	0.21.7
+Version:	0.22.1
 Release:	1
 Summary:        Pure-Python Git implementation
 Group:		Development/Python
@@ -35,4 +35,3 @@ doesn't call out to git directly but instead uses pure Python.
 %{_bindir}/dulwich
 %{py_platsitedir}/%{srcname}
 %{py_platsitedir}/%{srcname}-%{version}-py%{py_ver}.egg-info
-%doc %{py_platsitedir}/docs/tutorial
