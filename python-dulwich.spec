@@ -10,24 +10,14 @@ License:        BSD
 URL:            https://github.com/dulwich/dulwich
 Source0:        https://github.com/dulwich/dulwich/archive/dulwich-%{version}.tar.gz
 
-BuildRequires:  pkgconfig(python3)
-BuildRequires:  python3egg(setuptools)
-BuildRequires:  python-pkg-resources
+BuildRequires:  python%{pyver}dist(setuptools_scm)
+BuildSystem:	python
 
 %description
 This is the Dulwich project.
 
 It aims to provide an interface to git repos (both local and remote) that
 doesn't call out to git directly but instead uses pure Python.
-
-%prep
-%setup -q -n %{srcname}-%{srcname}-%{version}
-
-%build
-%__python setup.py build
-
-%install
-%__python setup.py install --skip-build --root %{buildroot}
 
 %files
 %{_bindir}/dul-receive-pack
