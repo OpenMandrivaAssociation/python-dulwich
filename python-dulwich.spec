@@ -24,4 +24,4 @@ doesn't call out to git directly but instead uses pure Python.
 %{_bindir}/dul-upload-pack
 %{_bindir}/dulwich
 %{py_platsitedir}/%{srcname}
-%{py_platsitedir}/%{srcname}-%{version}-py%{py_ver}.egg-info
+%{py_platsitedir}/%{srcname}*.*-info
