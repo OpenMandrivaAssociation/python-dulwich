@@ -2,7 +2,7 @@
 %define debug_package %nil
 
 Name:           python-%{srcname}
-Version:	0.22.8
+Version:	0.24.10
 Release:	1
 Summary:        Pure-Python Git implementation
 Group:		Development/Python
