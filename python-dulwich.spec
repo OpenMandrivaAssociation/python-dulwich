@@ -1,17 +1,21 @@
-%define srcname dulwich
-%define debug_package %nil
+%undefine _debugsource_template
+%define module dulwich
 
-Name:           python-%{srcname}
-Version:	1.0.0
+Name:		python-dulwich
+Version:	1.1.0
 Release:	1
-Summary:        Pure-Python Git implementation
+Summary:	Pure-Python Git implementation
 Group:		Development/Python
-License:        BSD
-URL:            https://github.com/dulwich/dulwich
-Source0:        https://github.com/dulwich/dulwich/archive/dulwich-%{version}.tar.gz
+License:	Apache-2.0 OR GPL-2.0-or-later
+URL:		https://github.com/dulwich/dulwich
+Source0:	https://files.pythonhosted.org/packages/source/d/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-BuildRequires:  python%{pyver}dist(setuptools-rust)
 BuildSystem:	python
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(setuptools-rust)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 This is the Dulwich project.
@@ -23,5 +27,5 @@ doesn't call out to git directly but instead uses pure Python.
 %{_bindir}/dul-receive-pack
 %{_bindir}/dul-upload-pack
 %{_bindir}/dulwich
-%{py_platsitedir}/%{srcname}
-%{py_platsitedir}/%{srcname}*.*-info
+%{py_platsitedir}/%{module}
+%{py_platsitedir}/%{module}-%{version}.dist-info
