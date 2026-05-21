@@ -2,7 +2,7 @@
 %define module dulwich
 
 Name:		python-dulwich
-Version:	1.2.1
+Version:	1.2.3
 Release:	1
 Summary:	Pure-Python Git implementation
 Group:		Development/Python
