@@ -2,7 +2,7 @@
 %define module dulwich
 
 Name:		python-dulwich
-Version:	1.2.3
+Version:	1.2.4
 Release:	1
 Summary:	Pure-Python Git implementation
 Group:		Development/Python
@@ -11,7 +11,7 @@ URL:		https://github.com/dulwich/dulwich
 Source0:	https://files.pythonhosted.org/packages/source/d/%{module}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(setuptools-rust)
